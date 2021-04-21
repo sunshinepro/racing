@@ -17,10 +17,14 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::middleware(['auth'])->group(function () {
+    Route::resource('horses', App\Http\Controllers\HorseController::class);
+    Route::resource('betters', App\Http\Controllers\BetterController::class);
+    
+});
 
-Route::resource('horses', App\Http\Controllers\HorseController::class);
-Route::resource('betters', App\Http\Controllers\BetterController::class);
 
-Auth::routes();
+Auth::routes(['register' => false]);
+
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

@@ -11,8 +11,11 @@ class Horse extends Model
 
     public $fillable = ['name', 'runs', 'wins', 'about'];
 
-    public function horses(){
+    public function better(){
         return $this->hasMany('App\Models\Better');
     }
 
 }
+
+    
+

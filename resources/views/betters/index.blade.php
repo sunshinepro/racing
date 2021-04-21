@@ -35,9 +35,9 @@
             {{-- <td>{{ $better->horse->name }}</td> --}}
             <td>
                 <form action={{ route('betters.destroy', $better->id) }} method="POST">
-                    <a class="btn btn-success" href={{ route('betters.edit', $better->id) }}>Redaguoti</a>
+                    <a class="btn btn-success" href={{ route('betters.edit', $better->id) }}>Edit</a>
                     @csrf @method('delete')
-                    <input type="submit" class="btn btn-danger" value="Trinti"/>
+                    <input type="submit" class="btn btn-danger" value="Delete"/>
                 </form>
             </td>
         </tr>

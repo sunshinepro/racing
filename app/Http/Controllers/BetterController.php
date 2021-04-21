@@ -25,7 +25,9 @@ class BetterController extends Controller
      */
     public function create()
     {
-        return view('betters.create');
+        $horses = \App\Models\Horse::orderBy('name')->get();
+        return view('betters.create', ['horses' => $horses]);
+        // return view('betters.create');
 
     }
 
@@ -66,7 +68,10 @@ class BetterController extends Controller
      */
     public function edit(Better $better)
     {
-        return view('betters.edit', ['better' => $better]);
+       
+        $horses = \App\Models\Horse::orderBy('name')->get();
+        return view('betters.edit', ['better' => $better, 'horses' => $horses]);
+        // return view('betters.edit', ['better' => $better]);
     }
 
     /**

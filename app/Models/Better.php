@@ -11,7 +11,7 @@ class Better extends Model
 
     public $fillable = ['name', 'surname', 'bet', 'horse_id'];
 
-    public function betters(){
+    public function horse(){
         return $this->belongsTo('App\Models\Horse');
     }
 
