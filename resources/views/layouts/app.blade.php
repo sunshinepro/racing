@@ -33,7 +33,12 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-
+                        <li class="nav-item">
+                            <a href="{{ route('horses.index') }}" class="nav-link">Horses</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ route('betters.index') }}" class="nav-link">Betters</a>
+                        </li>    
                     </ul>
 
                     <!-- Right Side Of Navbar -->
@@ -75,9 +80,16 @@
             </div>
         </nav>
 
-        <main class="py-4">
+        <main class="container">
             @yield('content')
         </main>
     </div>
+    <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+    <script>
+        tinymce.init({
+          selector: '#mce'
+        });
+      </script>
+  
 </body>
 </html>

@@ -14,7 +14,7 @@ class HorseController extends Controller
      */
     public function index()
     {
-        return view('horses.index', ['countries' => Horse::orderBy('name')->get()]);
+        return view('horses.index', ['horses' => Horse::orderBy('name')->get()]);
     }
 
     /**
@@ -25,7 +25,8 @@ class HorseController extends Controller
     public function create()
     {
         return view('horses.create');
-    }
+
+            }
 
     /**
      * Store a newly created resource in storage.
@@ -40,7 +41,7 @@ class HorseController extends Controller
         // dd($request->all()); die();
         $horse->fill($request->all());
         $horse->save();
-        return redirect()->route('country.index');
+        return redirect()->route('horses.index');
     
     }
 
@@ -78,6 +79,10 @@ class HorseController extends Controller
         $horse->fill($request->all());
         $horse->save();
         return redirect()->route('horses.index');
+
+        // return ($horse->save() !== 1) ?
+        // redirect('horses.index')->with('status_success', 'Horse was updated!') :
+        // redirect('horses.index')->with('status_error', 'Horse was not updated!');
 
     }
 

@@ -9,10 +9,10 @@ class Better extends Model
 {
     use HasFactory;
 
-    public $fillable = ['name', 'surname', 'bet', 'country_id'];
+    public $fillable = ['name', 'surname', 'bet', 'horse_id'];
 
     public function betters(){
-        return $this->belongsTo('App\Models\horse');
+        return $this->belongsTo('App\Models\Horse');
     }
 
 }

@@ -38,11 +38,12 @@ class BetterController extends Controller
     public function store(Request $request)
     {
         $better = new Better();
+        // $better = new Better($request->all());
 	// can be used for seeing the insides of the incoming request
         // dd($request->all()); die();
        $better->fill($request->all());
        $better->save();
-       return redirect()->route('better.index');
+       return redirect()->route('betters.index');
 
     }
 
