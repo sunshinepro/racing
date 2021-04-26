@@ -68,7 +68,6 @@ class BetterController extends Controller
      */
     public function edit(Better $better)
     {
-       
         $horses = \App\Models\Horse::orderBy('name')->get();
         return view('betters.edit', ['better' => $better, 'horses' => $horses]);
         // return view('betters.edit', ['better' => $better]);
